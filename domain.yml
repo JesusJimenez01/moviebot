@@ -1,0 +1,104 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye  
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_recommendation
+  - search_movie
+  - ask_genre
+  - get_popular_movies
+  - add_watchlist
+  - ask_rating
+  - ask_help
+  - ask_year
+  - find_by_description
+
+entities:
+  - genre
+  - movie_title
+  - year
+  - description
+
+slots:
+  genre:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: genre
+      
+  movie_title:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: movie_title
+      
+  year:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: year
+      
+  description:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: description
+
+responses:
+  utter_greet:
+  - text: "¡Hola! 🎬 Soy tu asistente personal de películas. ¿En qué puedo ayudarte?"
+    
+  utter_cheer_up:
+  - text: "¡Perfecto! Te voy a buscar algo increíble para ver 🍿"
+  - text: "¡Excelente! Déjame encontrar la película perfecta para ti ⭐"
+  
+  utter_did_that_help:
+  - text: "¿Te gustó mi recomendación? ¿Quieres que te busque otra?"
+  - text: "¿Qué te pareció? ¿Te ayudo con algo más?"
+  
+  utter_happy:
+  - text: "¡Genial! Me alegra poder ayudarte 😊 ¡Disfruta la película!"
+  - text: "¡Perfecto! Espero que la disfrutes mucho 🎭"
+  
+  utter_goodbye:
+  - text: "¡Hasta luego! Que disfrutes viendo películas 🍿✨"
+  - text: "¡Nos vemos! Vuelve cuando quieras más recomendaciones 🎬"
+  
+  utter_iamabot:
+  - text: "Soy un bot especializado en películas 🤖, creado para ayudarte a encontrar el entretenimiento perfecto. ¿En qué puedo ayudarte?"
+  
+  utter_help:
+  - text: |
+      ¡Puedo ayudarte con esto! 🎬
+      
+      ✅ Recomendarte películas por género
+      ✅ Encontrar películas por descripción
+      ✅ Buscar información de películas específicas
+      ✅ Mostrarte películas populares
+      
+      Ejemplos:
+      • "Recomiéndame una de terror"
+      • "Busco una película sobre viajes en el tiempo"
+      • "Busca Inception"
+      • "Películas populares"
+
+actions:
+  - action_recommend_movie
+  - action_find_movie_by_description
+  - action_search_movie
+  - action_get_popular_movies
+  - action_add_to_watchlist
+  - action_default_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

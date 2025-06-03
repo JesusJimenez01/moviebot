@@ -1,0 +1,18 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Variables de entorno
+.env
+
+# Archivos de Rasa
+.rasa/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Otros archivos que pueden generarse
+*.log

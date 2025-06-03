@@ -1,0 +1,333 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - buenos días
+    - buenas tardes
+    - buenas noches
+    - hey
+    - saludos
+    - qué tal
+    - cómo estás
+    - muy buenas
+    - hola bot
+    - hi
+    - hello
+    - ey
+    - holaa
+    - ¿qué tal?
+
+- intent: goodbye
+  examples: |
+    - adiós
+    - hasta luego
+    - nos vemos
+    - chao
+    - bye
+    - hasta pronto
+    - me voy
+    - ya me voy
+    - hasta la vista
+    - que tengas buen día
+    - gracias por todo
+    - perfecto, gracias
+
+- intent: ask_recommendation
+  examples: |
+    - recomiéndame una película
+    - qué película me recomiendas
+    - busco algo para ver
+    - quiero ver una buena película
+    - necesito una recomendación
+    - sugiere algo bueno
+    - dame una recomendación
+    - qué puedo ver hoy
+    - estoy aburrido, qué veo
+    - algo entretenido para ver
+    - una película que valga la pena
+    - qué película está buena
+    - recomienda algo
+    - dime qué ver
+    - ayúdame a elegir película
+    - quiero ver algo nuevo
+    - qué me sugieres
+    - algo para esta noche
+    - una peli buena
+    - recomienda una película
+    - sugiere una película
+
+- intent: search_movie
+  examples: |
+    - busca [Inception](movie_title)
+    - información sobre [Titanic](movie_title) 
+    - qué tal está [Avengers](movie_title)
+    - detalles de [El Padrino](movie_title)
+    - dime sobre [Matrix](movie_title)
+    - [Interstellar](movie_title) está buena?
+    - cuéntame de [Joker](movie_title)
+    - [Spider-Man](movie_title) vale la pena?
+    - información de [Dune](movie_title)
+    - qué opinas de [Pulp Fiction](movie_title)
+    - has visto [Parasite](movie_title)?
+    - [La La Land](movie_title) está bien?
+    - buscar [Fast and Furious](movie_title)
+    - encuentra [John Wick](movie_title)
+    - localiza [Batman](movie_title)
+    - [Wonder Woman](movie_title) qué tal?
+    - [Black Panther](movie_title) es buena?
+    - [Deadpool](movie_title) me gustará?
+    - [The Mandalorian](movie_title) búscala
+    - encuentra info de [Shrek](movie_title)
+
+- intent: ask_genre
+  examples: |
+    - me gustan las de [acción](genre)
+    - películas de [terror](genre)  
+    - algo de [comedia](genre)
+    - [drama](genre) romántico
+    - [ciencia ficción](genre)
+    - busco [aventura](genre)
+    - [suspense](genre) psicológico
+    - algo de [animación](genre)
+    - [documentales](genre) interesantes
+    - [thriller](genre) bueno
+    - [romance](genre) para llorar
+    - [fantasía](genre) épica
+    - [crimen](genre) y [misterio](genre)
+    - [guerra](genre) histórica
+    - [western](genre) clásico
+    - películas [familiares](genre)
+    - algo de [música](genre)
+    - [biografías](genre) reales
+    - [deportes](genre) motivacionales
+    - [horror](genre) que asuste
+    - [sci-fi](genre) futurista
+    - [dramática](genre) intensa
+    - [cómica](genre) para reír
+    - [policíaca](genre) de investigación
+    - [superhéroes](genre)
+    - [zombies](genre) y apocalipsis
+    - [espías](genre) y agentes
+    - [mafia](genre) italiana
+    - [anime](genre) japonés
+    - [k-drama](genre) coreano
+
+- intent: get_popular_movies
+  examples: |
+    - películas populares
+    - qué está de moda
+    - tendencias en cine
+    - las más vistas
+    - top películas
+    - lo más popular ahora
+    - qué está trending
+    - películas del momento
+    - estrenos populares
+    - lo que todos ven
+    - hits actuales
+    - películas virales
+    - blockbusters
+    - taquilleras
+    - famosas ahora
+    - en cartelera popular
+    - lo más visto del año
+    - películas exitosas
+    - favoritas del público
+    - más valoradas
+
+- intent: add_watchlist
+  examples: |
+    - añadir a mi lista
+    - guardar para después
+    - agregar a watchlist
+    - anotar para ver luego
+    - lo veo más tarde
+    - ponerlo en pendientes
+    - recordármelo después
+    - guardarlo
+    - apuntarlo
+    - añadir [Inception](movie_title) a mi lista
+    - guardar [Matrix](movie_title) para después
+    - agregar [Titanic](movie_title) a pendientes
+    - anotar [Joker](movie_title) para luego
+
+- intent: ask_rating
+  examples: |
+    - qué puntuación tiene
+    - cuántas estrellas
+    - está bien valorada
+    - qué rating tiene
+    - cómo la califican
+    - vale la pena verla
+    - es buena película
+    - está recomendada
+    - qué tal la califican
+    - tiene buenas críticas
+    - la gente la recomienda
+    - [Matrix](movie_title) qué puntuación tiene
+    - está bien valorado [Joker](movie_title)
+    - [Inception](movie_title) tiene buenas críticas
+
+- intent: affirm  
+  examples: |
+    - sí
+    - si
+    - claro
+    - por supuesto
+    - correcto
+    - exacto
+    - perfecto
+    - dale
+    - ok
+    - okay
+    - está bien
+    - de acuerdo
+    - me parece bien
+    - genial
+    - excelente
+    - sí por favor
+    - adelante
+    - continúa
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - para nada
+    - no gracias  
+    - no me interesa
+    - paso
+    - mejor no
+    - no quiero
+    - no me gusta
+    - no es lo que busco
+    - algo diferente
+    - no me convence
+    - no es mi estilo
+    - prefiero otra cosa
+
+- intent: bot_challenge
+  examples: |
+    - eres un bot?
+    - eres humano?
+    - eres real?
+    - qué eres?
+    - eres un robot?
+    - eres artificial?
+    - eres una máquina?
+    - con quién hablo?
+    - quién eres?
+    - eres una persona?
+
+- intent: ask_help
+  examples: |
+    - ayuda
+    - help
+    - qué puedes hacer
+    - cómo funciona esto
+    - qué comandos tienes
+    - cómo te uso
+    - opciones disponibles
+    - menú de opciones
+    - instrucciones
+    - guía de uso
+    - manual
+    - tutorial
+
+- intent: mood_great
+  examples: |
+    - genial
+    - perfecto
+    - excelente  
+    - fantástico
+    - increíble
+    - me encanta
+    - súper bien
+    - muy bueno
+    - espectacular
+    - maravilloso
+
+- intent: mood_unhappy
+  examples: |
+    - no me gustó
+    - está mal
+    - no me convence
+    - horrible
+    - no sirve
+    - no funciona
+    - decepcionante
+    - malo
+    - pésimo
+    - aburrido
+
+- intent: ask_year
+  examples: |
+    - películas del [2023](year)
+    - estrenos de [2024](year) 
+    - clásicos de los [90](year)
+    - películas de [2020](year)
+    - algo de [2022](year)
+    - del año [2021](year)
+    - estrenos [2025](year)
+    - películas [2010](year)
+    - clásicos [80](year)
+
+- synonym: terror
+  examples: |
+    - horror
+    - miedo
+    - suspenso
+    - pánico
+
+- synonym: comedia  
+  examples: |
+    - humor
+    - cómica
+    - divertida
+    - graciosa
+
+- synonym: ciencia ficción
+  examples: |
+    - sci-fi
+    - ficción
+    - futurista
+
+- synonym: acción
+  examples: |
+    - action
+    - aventura
+    - adrenalina
+
+- regex: year
+  examples: |
+    - \d{4}
+    - [1-2][0-9]{3}
+
+- regex: movie_title
+  examples: |
+    - [A-Za-zÀ-ÿ\s\d:.-]+
+
+- intent: find_by_description
+  examples: |
+    - busco una película sobre [viajes en el tiempo](description)
+    - una película donde [un tipo se queda atrapado repitiendo el mismo día](description)
+    - película de [sueños dentro de sueños](description) 
+    - una donde [hablan los juguetes](description)
+    - película sobre [un barco que se hunde](description)
+    - busco una de [robots del futuro](description)
+    - película donde [un hombre araña](description)
+    - una sobre [dinosaurios en una isla](description)
+    - película de [un tiburón gigante](description)
+    - busco una donde [pelean con espadas láser](description)
+    - una película sobre [memoria perdida](description)
+    - donde [un detective investiga sueños](description)
+    - película de [superhéroes que se juntan](description)
+    - una sobre [zombies apocalipsis](description)
+    - busco película de [magia y magos](description)
+    - una donde [bailan y cantan](description)
+    - película sobre [un payaso malvado](description)
+    - una de [carreras de autos rápidos](description)
+    - busco película sobre [piratas del caribe](description)
+    - una donde [los muertos vuelven a la vida](description)

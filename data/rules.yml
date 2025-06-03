@@ -1,0 +1,28 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Handle movie description search
+  steps:
+  - intent: find_by_description
+  - action: action_find_movie_by_description
+
+- rule: Activate fallback action
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback

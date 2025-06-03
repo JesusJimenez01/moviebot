@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+
+- story: recommend movie with genre
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_recommendation
+  - action: utter_cheer_up
+  - intent: ask_genre
+    entities:
+    - genre: "acción"
+  - action: action_recommend_movie
+  - intent: affirm
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: search specific movie
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search_movie
+    entities:
+    - movie_title: "Inception"
+  - action: action_search_movie
+  - intent: add_watchlist
+  - action: action_add_to_watchlist
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: get popular movies
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_popular_movies
+  - action: action_get_popular_movies
+  - intent: search_movie
+    entities:
+    - movie_title: "Matrix"
+  - action: action_search_movie
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: recommendation flow with denial
+  steps:
+  - intent: ask_recommendation
+  - action: action_recommend_movie
+  - intent: deny
+  - action: utter_did_that_help
+  - intent: ask_genre
+    entities:
+    - genre: "comedia"
+  - action: action_recommend_movie
+  - intent: affirm
+  - action: utter_happy
+
+- story: genre recommendation flow
+  steps:
+  - intent: ask_genre
+    entities:
+    - genre: "terror"
+  - action: action_recommend_movie
+  - intent: ask_recommendation
+  - action: action_recommend_movie
+  - intent: affirm
+  - action: utter_happy
+
+- story: help request
+  steps:
+  - intent: ask_help
+  - action: utter_help
+
+- story: find by description
+  steps:
+  - intent: find_by_description
+    entities:
+    - description: "viajes en el tiempo"
+  - action: action_find_movie_by_description
