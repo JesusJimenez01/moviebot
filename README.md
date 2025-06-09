@@ -1,5 +1,5 @@
 # moviebot
-Chatbot creado con Rasa para complementar mi proyecto de final de grado
+Chatbot creado con Rasa para complementar mi proyecto de final de grado. Es necesaria la versión de python 3.10
 
 ## Tutorial:
 ### 1. Activar entorno virtual (en windows usar antes Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass)
